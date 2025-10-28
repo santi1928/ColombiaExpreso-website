@@ -1082,7 +1082,6 @@ header .navbar {
   gap: 5px;
   margin-left: auto;
   margin-right: 20px;
-  justify-content: center;
 }
 
 .lang-btn {
@@ -1107,46 +1106,19 @@ header .navbar {
   color: white;
 }
 
-/* Hide mobile language switcher on desktop */
-.language-switcher-mobile {
-  display: none;
-}
-
-/* Responsive language switcher - only when overlapping with logo */
-@media screen and (max-width: 600px) {
-  /* Hide desktop language switcher on small screens */
-  .navbar > .language-switcher {
-    display: none;
-  }
-  
-  /* Show mobile language switcher in menu */
-  .language-switcher-mobile {
-    display: block;
-    margin: 20px 0;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .language-switcher-mobile .language-switcher {
+/* Responsive language switcher */
+@media screen and (max-width: 900px) {
+  .language-switcher {
+    position: fixed;        /* Changed from absolute to fixed */
+    top: 85px;             /* Position below the navbar */
+    right: 20px;           /* Right side of screen */
+    z-index: 10;           /* Make sure it's above other content */
     margin: 0;
-    justify-content: center;
   }
   
   .lang-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-}
-
-/* Keep it visible on medium screens (601px - 900px) */
-@media screen and (min-width: 601px) and (max-width: 900px) {
-  .navbar > .language-switcher {
-    display: flex;
-    margin-right: 15px;
-  }
-  
-  .language-switcher-mobile {
-    display: none;
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }
 
