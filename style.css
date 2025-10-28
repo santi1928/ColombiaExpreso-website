@@ -1075,13 +1075,6 @@ header .navbar {
 .expreso  { color: rgb(39, 39, 228); }  /* white */
 .envios   { color: #f32c2c; }  /* orange */
 
-/* Language switcher styling */
-.language-switcher {
-  display: flex;
-  gap: 5px;
-  margin-left: auto;
-  margin-right: 20px;
-}
 
 .lang-btn {
   padding: 8px 15px;
@@ -1105,11 +1098,15 @@ header .navbar {
   color: white;
 }
 
-/* Responsive language switcher */
 @media screen and (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+  
   .language-switcher {
-    position: absolute;
-    top: 20px;
-    right: 80px;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 0 0;
   }
 }
