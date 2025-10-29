@@ -378,7 +378,14 @@ header .navbar {
   transform: scale(1.1); /* Add hover effect like hero */
   color: black;
 }
-
+/* Move pagination dots below the content */
+.exchange-swiper .swiper-pagination {
+  position: relative;
+  bottom: auto;
+  top: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
 /* Responsive */
 @media screen and (max-width: 768px) {
@@ -1133,6 +1140,145 @@ header .navbar {
 
 .policy-text a {
   margin: 0 15px;
+}
+
+/* Expanded Colombia Card */
+.exchange-card-expanded {
+  min-height: auto;
+  padding: 15px;
+}
+
+/* Main Rate Display */
+.main-rate {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.rate-label {
+  font-size: 24x;
+  font-weight: bold;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.exchange-rate-large {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 5px 0;
+  margin-bottom: -50px;
+}
+
+
+/* Fixed width container - doesn't stretch */
+.rate-sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 10px auto;  /* Center it */
+  width: 900px;       /* Fixed width */
+  max-width: 95%;     /* Responsive on mobile */
+}
+
+.rate-section {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 25px;
+  background: #fafafa;
+}
+
+/* Items fill the fixed width container */
+.rate-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rate-item {
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: transparent;  /* Remove white background */
+  border-bottom: 1px solid #999;  /* Dark gray line */
+  transition: all 0.2s ease;
+}
+
+.rate-item:hover {
+  background: rgba(255, 255, 255, 0.3);  /* Subtle hover */
+}
+
+/* Rate List */
+.rate-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  row-gap: 0;  /* No gap between rows */
+}
+
+/* Rate Items - NO individual borders */
+.rate-item {
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: transparent;
+  border-bottom: 2px solid #333;  /* Line goes full width of item */
+  transition: all 0.2s ease;
+}
+
+/* Remove border from last row */
+.rate-item:nth-last-child(1),
+.rate-item:nth-last-child(2) {
+  border-bottom: none;
+}
+
+/* ADD border back if last item is odd (different rows) */
+.rate-list:has(.rate-item:last-child:nth-child(odd)) .rate-item:nth-last-child(2) {
+  border-bottom: 2px solid #333;
+}
+
+.rate-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+
+
+
+.rate-logo {
+  width: 35px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.rate-name {
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rate-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 
