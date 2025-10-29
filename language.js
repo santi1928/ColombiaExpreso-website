@@ -62,9 +62,10 @@ const translations = {
     'form-submit': 'Submit',
     
     // Footer
-    'copyright': '© 2024 Colombia Expreso Envios',
-    'privacy': 'Privacy policy',
-    'refund': 'Refund policy'
+    'copyright': '© 2025 Colombia Expreso Envios',
+    'privacy': 'Privacy Policy',
+    'terms': 'Terms of Service',
+    'disclaimer': 'Disclaimer'
   },
   es: {
     // Topbar
@@ -128,9 +129,10 @@ const translations = {
     'form-submit': 'Enviar',
     
     // Footer
-    'copyright': '© 2024 Colombia Expreso Envios',
-    'privacy': 'Política de privacidad',
-    'refund': 'Política de reembolso'
+    'copyright': '© 2025 Colombia Expreso Envios',
+    'privacy': 'Política de Privacidad',
+    'terms': 'Términos de Servicio',
+    'disclaimer': 'Descargo de Responsabilidad'
   }
 };
 
@@ -180,6 +182,6 @@ document.getElementById('lang-es').addEventListener('click', () => changeLanguag
 
 // Load saved language preference
 window.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('preferredLanguage') || 'es'; // Change 'en' to 'es'
+  const savedLang = localStorage.getItem('preferredLanguage') || 'es';
   changeLanguage(savedLang);
 });
