@@ -193,13 +193,12 @@ header .navbar {
   color: white;
 }
 
-/* Hero section styling */
 .hero-section {
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   padding-top: 180px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Add this */
   align-items: center;
   justify-content: center;
   background-image: url("https://images.pexels.com/photos/5025659/pexels-photo-5025659.jpeg");
@@ -211,14 +210,6 @@ header .navbar {
   position: relative;
 }
 
-/* Fix blurry background on mobile */
-@media screen and (max-width: 768px) {
-  .hero-section {
-    background-attachment: scroll; /* Change from fixed to scroll on mobile */
-    background-size: cover;
-    background-position: center center;
-  }
-}
 
 .hero-swiper {
   width: 90%;
@@ -257,6 +248,7 @@ header .navbar {
   
   transition: all 0.3s ease;
 }
+
 
 .hero-swiper .swiper-button-next:hover,
 .hero-swiper .swiper-button-prev:hover {
@@ -301,29 +293,28 @@ header .navbar {
   margin-bottom: 10px;
 }
 
-
+/* Make exchange rate slides taller */
 .exchange-swiper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 60px 60px;
-  
+  height: auto;
+  min-height: 500px;
 }
 
-.exchange-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.exchange-swiper .swiper-slide {
+  height: auto;
+  min-height: 500px;  /* Adjust this value as needed */
 }
 
 .exchange-card {
-  background: transparent;
-  border-radius: 20px;
-  padding: 40px;
-  width: 100%;
-  max-width: 700px;
-  box-shadow: none;
-  border: none;
+  height: 100%;
+  min-height: 450px;
 }
+
+.exchange-card-expanded {
+  min-height: auto;
+  height: auto;
+  padding: 15px;
+}
+
 
 .exchange-header {
   text-align: center;
@@ -358,7 +349,7 @@ header .navbar {
 
 .exchange-swiper .swiper-button-next,
 .exchange-swiper .swiper-button-prev {
-  color: white;
+  color: black;
   background: transparent;
   width: 70px;  /* Even larger */
   height: 70px;
@@ -386,6 +377,7 @@ header .navbar {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
 
 /* Responsive */
 @media screen and (max-width: 768px) {
@@ -1091,7 +1083,6 @@ header .navbar {
 .expreso  { color: rgb(39, 39, 228); }  /* white */
 .envios   { color: #f32c2c; }  /* orange */
 
-
 /* Language switcher styling */
 .language-switcher {
   display: flex;
@@ -1122,21 +1113,7 @@ header .navbar {
   color: white;
 }
 
-/* Responsive language switcher */
-@media screen and (max-width: 900px) {
-  .language-switcher {
-    position: fixed;        /* Changed from absolute to fixed */
-    top: 85px;             /* Position below the navbar */
-    right: 20px;           /* Right side of screen */
-    z-index: 10;           /* Make sure it's above other content */
-    margin: 0;
-  }
-  
-  .lang-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-}
+
 
 .policy-text a {
   margin: 0 15px;
@@ -1280,6 +1257,82 @@ header .navbar {
   white-space: nowrap;
   flex-shrink: 0;
 }
+/* Mobile: 1 column for exchange rates */
+@media screen and (max-width: 768px) {
+  .rate-sections-container {
+    width: 100%;
+    max-width: 95%;
+    gap: 12px;
+  }
+  
+  .rate-section {
+    width: 100%;
+  }
+  
+  /* Change from 2 columns to 1 column */
+  .rate-list {
+    grid-template-columns: 1fr;  /* Single column on mobile */
+  }
+  
+  .rate-item {
+    padding: 10px;
+  }
+  
+  .rate-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .rate-name {
+    font-size: 14px;
+  }
+  
+  .rate-value {
+    font-size: 14px;
+  }
+  
+  .rate-section-title {
+    font-size: 16px;
+  }
+  
+  /* Adjust exchange rate display */
+  .exchange-rate-large {
+    font-size: 2rem;
+  }
+  
+  .country-name {
+    font-size: 2rem;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 480px) {
+  .rate-sections-container {
+    width: 100%;
+    padding: 0 5px;
+  }
+  
+  .rate-section {
+    padding: 10px;
+  }
+  
+  .rate-list {
+    grid-template-columns: 1fr;  /* Keep single column */
+  }
+  
+  .rate-item {
+    padding: 8px;
+  }
+  
+  .exchange-rate-large {
+    font-size: 1.8rem;
+  }
+  
+  .country-name {
+    font-size: 1.8rem;
+  }
+}
+
 
 
 
