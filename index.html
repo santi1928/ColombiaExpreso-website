@@ -474,9 +474,15 @@
  
 
 
-         <form action="#" class="contact-form">
-  <input type="text" placeholder="Tu nombre" class="form-input" data-lang="form-name" required />
-  <input type="email" placeholder="Tu correo electrónico" class="form-input" data-lang="form-email" required />
+         <form action="https://formsubmit.co/info@colexp.com" method="POST" class="contact-form">
+  <!-- Hidden fields for FormSubmit configuration -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Colombia Expreso">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  
+  <!-- Form fields -->
+  <input type="text" name="name" placeholder="Tu nombre" class="form-input" data-lang="form-name" required />
+  <input type="email" name="email" placeholder="Tu correo electrónico" class="form-input" data-lang="form-email" required />
   <input 
     type="tel"
     id="phone"
@@ -488,7 +494,7 @@
     autocomplete="tel"
     required
   />
-  <textarea placeholder="Tu mensaje (opcional)" class="form-input" data-lang="form-message"></textarea>
+  <textarea name="message" placeholder="Tu mensaje (opcional)" class="form-input" data-lang="form-message"></textarea>
   <button type="submit" class="button submit-button" data-lang="form-submit">Enviar</button>
 </form>
           
@@ -517,3 +523,4 @@
   </body>
 
 </html>
+
