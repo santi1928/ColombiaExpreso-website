@@ -1131,4 +1131,8 @@ header .navbar {
   }
 }
 
+.policy-text a {
+  margin: 0 15px;
+}
+
 
