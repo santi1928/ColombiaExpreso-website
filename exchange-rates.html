@@ -252,29 +252,37 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="language.js"></script>
-  
-  <!-- Initialize Swiper - NO AUTOPLAY -->
-  <script>
+ <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>  ← Move this UP (loads navbar functionality)
+<script src="language.js"></script>
+
+<!-- Initialize Exchange Swiper WITHOUT autoplay -->
+<script>
+  // Wait a moment for script.js to finish
+  setTimeout(function() {
+    // Destroy existing swiper
+    const existingSwiper = document.querySelector('.exchange-swiper')?.swiper;
+    if (existingSwiper) {
+      existingSwiper.destroy(true, true);
+    }
+    
+    // Create new swiper WITHOUT autoplay
     const exchangeSwiper = new Swiper('.exchange-swiper', {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
-      // No autoplay = manual control only
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.exchange-swiper .swiper-button-next',
+        prevEl: '.exchange-swiper .swiper-button-prev',
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.exchange-swiper .swiper-pagination',
         clickable: true,
       },
     });
-  </script>
-  
-  <script src="script.js"></script>
+  }, 100);
+</script>
 </body>
 </html>
 
