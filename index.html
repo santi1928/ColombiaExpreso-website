@@ -475,14 +475,15 @@
 
 
          <form action="https://formsubmit.co/info@colexp.com" method="POST" class="contact-form">
-  <!-- Hidden fields for FormSubmit configuration -->
+  <!-- SPAM PROTECTION -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="_captcha" value="true">
   <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Colombia Expreso">
-  <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
   
-  <!-- Form fields -->
-  <input type="text" name="name" placeholder="Tu nombre" class="form-input" data-lang="form-name" required />
-  <input type="email" name="email" placeholder="Tu correo electrónico" class="form-input" data-lang="form-email" required />
+  <!-- FORM FIELDS -->
+  <input type="text" name="name" placeholder="Tu nombre" class="form-input" required />
+  <input type="email" name="email" placeholder="Tu correo electrónico" class="form-input" required />
   <input 
     type="tel"
     id="phone"
@@ -501,13 +502,15 @@
         </div>
       </section>
 
-     <!-- Footer section -->
+    <!-- UPDATED FOOTER WITH MORE SPACING -->
 <footer class="footer-section">
   <div class="section-content">
     <p class="copyright-text" data-lang="copyright">© 2025 Colombia Expreso Envia</p>
     
     <p class="policy-text">
-      <a href="privacy-policy.html" class="policy-link" data-lang="privacy">Política de privacidad</a>
+      <a href="privacy-policy.html" class="policy-link" data-lang="privacy">Política de Privacidad</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+      <a href="terms-of-service.html" class="policy-link" data-lang="terms">Términos de Servicio</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+      <a href="disclaimer.html" class="policy-link" data-lang="disclaimer">Descargo de Responsabilidad</a>
     </p>
   </div>
 </footer>
@@ -523,4 +526,5 @@
   </body>
 
 </html>
+
 
