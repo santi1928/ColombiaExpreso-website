@@ -72,7 +72,7 @@ let contentswiper = new Swiper(".slider-wrapper", {
 let heroSwiper = new Swiper(".hero-swiper", {
   loop: true,
   autoplay: {
-    delay: 10000,
+    delay: 6000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -146,4 +146,5 @@ document.addEventListener('keydown', function(event) {
     });
     document.body.style.overflow = 'auto';
   }
+
 });
