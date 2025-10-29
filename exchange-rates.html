@@ -201,6 +201,15 @@
             </div>
           </div>
 
+          <div class="swiper-slide exchange-slide">
+            <div class="exchange-card">
+              <div class="exchange-header">
+                <img src="https://flagcdn.com/w80/ec.png" alt="Ecuador Flag" class="country-flag">
+                <h3 class="country-name">Ecuador</h3>
+                <p class="exchange-rate">$ 1.00 USD</p>
+              </div>
+            </div>
+          </div>
 
           <div class="swiper-slide exchange-slide">
             <div class="exchange-card">
@@ -218,6 +227,16 @@
                 <img src="https://flagcdn.com/w80/cr.png" alt="Costa Rica Flag" class="country-flag">
                 <h3 class="country-name">Costa Rica</h3>
                 <p class="exchange-rate">$ 510 CRC</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide exchange-slide">
+            <div class="exchange-card">
+              <div class="exchange-header">
+                <img src="https://flagcdn.com/w80/sv.png" alt="El Salvador Flag" class="country-flag">
+                <h3 class="country-name">El Salvador</h3>
+                <p class="exchange-rate">$ 1.00 USD</p>
               </div>
             </div>
           </div>
@@ -254,37 +273,28 @@
   </footer>
 
   <!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="language.js"></script>
-
-<!-- Initialize Exchange Swiper WITHOUT autoplay (overrides script.js) -->
-<script>
-  // Wait for DOM to be ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // Destroy any existing exchange swiper first
-    const existingSwiper = document.querySelector('.exchange-swiper')?.swiper;
-    if (existingSwiper) {
-      existingSwiper.destroy(true, true);
-    }
-    
-    // Create new swiper WITHOUT autoplay
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="language.js"></script>
+  
+  <!-- Initialize Swiper - NO AUTOPLAY -->
+  <script>
     const exchangeSwiper = new Swiper('.exchange-swiper', {
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
+      // No autoplay = manual control only
       navigation: {
-        nextEl: '.exchange-swiper .swiper-button-next',
-        prevEl: '.exchange-swiper .swiper-button-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       pagination: {
-        el: '.exchange-swiper .swiper-pagination',
+        el: '.swiper-pagination',
         clickable: true,
       },
     });
-  });
-</script>
+  </script>
+  
   <script src="script.js"></script>
 </body>
-
 </html>
 
