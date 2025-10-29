@@ -62,7 +62,7 @@ const translations = {
     'form-submit': 'Submit',
     
     // Footer
-    'copyright': '© 2025 Colombia Expreso Envios',
+    'copyright': '© 2025 Colombia Expreso Envia',
     'privacy': 'Privacy Policy',
     'terms': 'Terms of Service',
     'disclaimer': 'Disclaimer'
@@ -129,7 +129,7 @@ const translations = {
     'form-submit': 'Enviar',
     
     // Footer
-    'copyright': '© 2025 Colombia Expreso Envios',
+    'copyright': '© 2025 Colombia Expreso Envia',
     'privacy': 'Política de Privacidad',
     'terms': 'Términos de Servicio',
     'disclaimer': 'Descargo de Responsabilidad'
@@ -184,4 +184,5 @@ document.getElementById('lang-es').addEventListener('click', () => changeLanguag
 window.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('preferredLanguage') || 'es';
   changeLanguage(savedLang);
+
 });
