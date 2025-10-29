@@ -257,6 +257,15 @@ header .navbar {
   color: black; /* Color on hover */
 }
 
+/* Fix blurry background on mobile */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll; /* Change from fixed to scroll on mobile */
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .hero-text-overlay h1 {
     font-size: 2rem;
@@ -1332,6 +1341,7 @@ header .navbar {
     font-size: 1.8rem;
   }
 }
+
 
 
 
