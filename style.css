@@ -1,0 +1,1350 @@
+/* Google Fonts Link */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* Colors */
+  --white-color: #fff;
+  --dark-color: #252525;
+  --primary-color: #3b141c;
+  --secondary-color: black;
+  --light-pink-color: #faf4f5;
+  --medium-gray-color: #ccc;
+
+  /* Font size */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.3rem;
+
+  /* Font weight */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50%;
+
+  /* Site max width */
+  --site-max-width: 1300px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+/* Stylings for whole site */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+img {
+  width: 100%;
+}
+
+:where(section, footer) .section-content {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: var(--site-max-width);
+}
+
+section .section-title {
+  text-align: center;
+  padding: 60px 0 100px;
+  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+}
+
+.topbar-left,
+.topbar-center,
+.topbar-right {
+  flex: 1;
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+}
+
+.topbar-left {
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+}
+
+.topbar-right {
+  text-align: right;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Make sure links are also bold */
+.topbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: var(--font-weight-bold) !important; /* Add !important to override */
+  margin: 0 8px;
+  
+}
+
+/* Also make sure all topbar text is bold */
+.topbar-left div,
+.topbar-center,
+.topbar-right a {
+  font-weight: var(--font-weight-bold) !important;
+}
+/* Navbar styling */
+header {
+  z-index: 5;
+  width: 100%;
+  position: fixed;
+  background-color: white
+}
+
+header .navbar {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+  max-width: var(--site-max-width);
+  
+}
+
+.navbar .nav-logo .logo-text {
+  color: var(--white-color);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  
+}
+
+.navbar .nav-menu {
+  gap: 10px;
+  display: flex;
+}
+
+.navbar .nav-menu .nav-link {
+  padding: 10px 18px;
+  color: black;
+  font-size: var(--font-size-m);
+  border-radius: var(--border-radius-m);
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+.navbar #menu-open-button {
+  color: black !important;
+}
+
+.navbar .nav-menu #menu-close-button {
+  color: black !important;
+}
+
+.navbar :is(#menu-open-button, #menu-close-button):hover {
+  color: black !important;
+}
+
+
+.navbar :where(#menu-open-button, #menu-close-button) {
+  display: none;
+}
+
+/* Hero section styling */
+
+/* Hero text overlay styling */
+.hero-text-overlay {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text-overlay h1 {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-text-overlay p {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  color: white;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column; /* Add this */
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://images.pexels.com/photos/5025659/pexels-photo-5025659.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #000;
+  position: relative;
+}
+
+
+.hero-swiper {
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 50px; /* Add space for pagination dots */
+}
+
+/* Move pagination outside the image area */
+.hero-swiper .swiper-pagination {
+  bottom: 10px !important; /* Position dots in the padding area */
+}
+.hero-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-swiper .swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ✅ keeps full image visible without stretching */
+}
+
+/* Improved navigation buttons */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  color: white; /* Change this to any color you want */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  
+  transition: all 0.3s ease;
+}
+
+
+.hero-swiper .swiper-button-next:hover,
+.hero-swiper .swiper-button-prev:hover {
+  background: white;
+  transform: scale(1.1);
+  color: black; /* Color on hover */
+}
+
+/* Fix blurry background on mobile */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll; /* Change from fixed to scroll on mobile */
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-text-overlay h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-text-overlay p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-text-overlay {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-text-overlay h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text-overlay p {
+    font-size: 1rem;
+  }
+}
+/* Exchange Rates section styling */
+.exchange-rates-section {
+  padding: 110px 0px 105px;
+  background: #f5f5f5;
+  text-align: center;
+  
+}
+
+.exchange-rates-section h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+/* Make exchange rate slides taller */
+.exchange-swiper {
+  height: auto;
+  min-height: 500px;
+}
+
+.exchange-swiper .swiper-slide {
+  height: auto;
+  min-height: 500px;  /* Adjust this value as needed */
+}
+
+.exchange-card {
+  height: 100%;
+  min-height: 450px;
+}
+
+.exchange-card-expanded {
+  min-height: auto;
+  height: auto;
+  padding: 15px;
+}
+
+
+.exchange-header {
+  text-align: center;
+  padding: 30px;
+  background: transparent;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.country-flag {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.country-name {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--dark-color);
+  margin-bottom: 10px;
+}
+
+.exchange-rate {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+
+.exchange-swiper .swiper-button-next,
+.exchange-swiper .swiper-button-prev {
+  color: black;
+  background: transparent;
+  width: 70px;  /* Even larger */
+  height: 70px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.exchange-swiper .swiper-button-next:after,
+.exchange-swiper .swiper-button-prev:after {
+  font-size: 32px; /* Larger arrow icon */
+  font-weight: bold;
+}
+
+.exchange-swiper .swiper-button-next:hover,
+.exchange-swiper .swiper-button-prev:hover {
+  background: white;
+  transform: scale(1.1); /* Add hover effect like hero */
+  color: black;
+}
+/* Move pagination dots below the content */
+.exchange-swiper .swiper-pagination {
+  position: relative;
+  bottom: auto;
+  top: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .exchange-card {
+    padding: 30px 20px;
+  }
+  
+  .country-name {
+    font-size: 1.6rem;
+  }
+  
+  .exchange-rate {
+    font-size: 2rem;
+  }
+  
+  .payers-logos img {
+    max-height: 40px;
+    max-width: 100px;
+  }
+}
+
+
+/* Tracking section */
+
+#tracking {
+  
+  padding: 130px 20px;
+}
+
+.tracking-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.tracking-section h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.tracking-section p {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tracking-providers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;              /* space between logos */
+  flex-wrap: wrap;        /* allows wrapping on smaller screens */
+}
+
+.tracking-providers img {
+  max-height: 160px;       /* ✅ same height for all logos */
+  width: 100%;            /* keep proportions */
+  max-width: 300px;
+  object-fit: contain;    /* prevent stretching */
+  transition: transform 0.2s ease;
+  flex: 1 1 150px;
+  background: white;
+  border-radius: 20px;
+}
+
+.tracking-providers img:hover {
+  transform: scale(1.05); /* little hover effect */
+}
+
+/* Modal styles for tracking */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  overflow: auto;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 900px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Larger modal for Western Union and Vigo to maintain desktop layout */
+#westernunionModal .modal-content,
+#vigoModal .modal-content,
+#riaModal .modal-content {
+  width: 85%;
+  max-width: 1100px;
+}
+
+.modal-header {
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.close {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.close:hover,
+.close:focus {
+  color: #ddd;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.tracking-iframe {
+  width: 100%;
+  height: 550px;
+  border: none;
+}
+
+/* Smaller height for Western Union and Vigo */
+.tracking-iframe-small {
+  width: 100%;
+  height: 420px;
+  border: none;
+}
+
+/* Larger height for Ria to show proper layout */
+#riaModal .tracking-iframe {
+  height: 650px;
+}
+
+
+
+/* services section styling */ 
+#services {
+  padding-top: 100px;
+  text-align: center;
+}
+.services-section h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.services-section {
+  background: var(--light-pink-color);
+  padding: 80px 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+.services-item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 50px 30px;
+  text-align: center;
+  min-height: 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.services-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.services-icon {
+  font-size: 60px;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+  color: black;
+}
+
+.services-name {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--dark-color);
+}
+
+.services-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive grid */
+@media screen and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+  }
+}
+
+
+
+
+/* Contact section styling */
+/* Contact section styling */
+.contact-section {
+  padding: 80px 0 100px;
+  background: var(--light-pink-color);
+}
+
+.contact-section h2 {
+  font-size: 38px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-section .section-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+/* Contact info styling */
+.contact-info-list {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-section .contact-info-list .contact-info {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  align-items: center;
+  text-align: left;
+}
+
+.contact-section .contact-info-list .contact-info i {
+  font-size: var(--font-size-l);
+  
+  min-width: 30px;
+}
+
+.contact-section .contact-info-list .contact-info p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-section .contact-info-list .contact-info a {
+  color: var(--dark-color);
+  transition: color 0.3s ease;
+}
+
+.contact-section .contact-info-list .contact-info a:hover {
+  color: var(--secondary-color);
+}
+
+/* Contact form styling */
+.contact-section .contact-form {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-section .contact-form .form-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: var(--font-size-n);
+  border-radius: var(--border-radius-s);
+  border: 1px solid var(--medium-gray-color);
+  transition: border-color 0.3s ease;
+}
+
+.contact-section .contact-form textarea.form-input {
+  height: 120px;
+  padding: 15px;
+  resize: vertical;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.contact-section .contact-form .submit-button {
+  width: 100%;
+  padding: 15px 28px;
+  outline: none;
+  margin-top: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius-m);
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-section .contact-form .submit-button:hover {
+  color: var(--primary-color);
+  background: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media screen and (max-width: 900px) {
+  .contact-section .section-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-info-list,
+  .contact-section .contact-form {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .contact-section {
+    padding: 60px 0 80px;
+  }
+
+  .contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .contact-section .contact-form .form-input {
+    height: 45px;
+    margin-bottom: 15px;
+  }
+}
+/* Footer section styling */
+.footer-section {
+  padding: 20px 0;
+  background: var(--dark-color);
+}
+
+.footer-section .section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-section :where(.copyright-text, .social-link, .policy-link) {
+  color: var(--white-color);
+  transition: 0.2s ease;
+}
+
+.footer-section .social-link-list {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-section .social-link-list .social-link {
+  font-size: var(--font-size-l);
+}
+
+.footer-section .social-link-list .social-link:hover,
+.footer-section .policy-text .policy-link:hover {
+  color: var(--secondary-color);
+}
+
+.footer-section .policy-text .separator {
+  color: #fff;
+  margin: 0 5px;
+}
+
+/* Responsive media query code for max width 1024px */
+@media screen and (max-width: 1024px) {
+  .menu-section .menu-list {
+    gap: 60px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: calc(100% / 3 - 60px);
+  }
+
+  .tracking-providers img {
+    max-width: 140px;
+  }
+}
+
+/* Responsive media query code for max width 900px */
+@media screen and (max-width: 900px) {
+  :root {
+    --font-size-m: 1rem;
+    --font-size-l: 1.3rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 1.8rem;
+  }
+
+  body.show-mobile-menu {
+    overflow: hidden;
+  }
+
+  body.show-mobile-menu header::before {
+    content: "";
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar :is(#menu-open-button, #menu-close-button) {
+    font-size: var(--font-size-l);
+
+    display: block;
+  }
+
+  .navbar :is(#menu-open-button, #menu-close-button):hover {
+    color: var(--secondary-color) !important;
+  }
+
+  .navbar #menu-open-button {
+    color: #fff;
+  }
+
+  .navbar .nav-menu #menu-close-button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+
+  .navbar .nav-menu {
+    display: block;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    transition: left 0.2s ease;
+  }
+
+  body.show-mobile-menu .nav-menu {
+    left: 0;
+  }
+
+  .navbar .nav-menu .nav-link {
+    display: block;
+    margin-top: 17px;
+    padding: 10px 22px;
+    color: var(--dark-color);
+    font-size: var(--font-size-l);
+  }
+
+  .hero-section .section-content {
+    text-align: center;
+    gap: 50px;
+    padding: 30px 20px 20px;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .hero-details :is(.subtitle, .description),
+  .about-section .about-details,
+  .contact-section .contact-form {
+    max-width: 100%;
+  }
+
+  .hero-section .hero-details .buttons {
+    justify-content: center;
+  }
+
+  .hero-section .hero-image-wrapper {
+    max-width: 270px;
+    margin-right: 0;
+  }
+
+  .about-section .section-content {
+    gap: 70px;
+    flex-direction: column-reverse;
+  }
+
+  .about-section .about-image-wrapper .about-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    max-width: 250px;
+  }
+
+  .menu-section .menu-list {
+    gap: 30px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: calc(100% / 2 - 30px);
+  }
+
+  .menu-section .menu-list .menu-item .menu-image {
+    max-width: 200px;
+  }
+
+  .gallery-section .gallery-list {
+    gap: 30px;
+  }
+
+  .gallery-section .gallery-list .gallery-item {
+    width: calc(100% / 2 - 30px);
+  }
+
+  .contact-section .section-content {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
+
+/* Responsive media query code for max width 640px */
+@media screen and (max-width: 640px) {
+
+  .menu-section .menu-list .menu-item,
+  .gallery-section .gallery-list .gallery-item {
+    width: 100%;
+  }
+
+  .menu-section .menu-list {
+    gap: 60px;
+  }
+
+  .testimonials-section .slider-wrapper {
+    margin: 0 0 30px;
+  }
+
+  .testimonials-section .swiper-slide-button {
+    display: none;
+  }
+
+  .footer-section .section-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #fff;   /* or your header background */
+  font-size: 14px;
+}
+
+/* make 3 columns */
+.topbar-left,
+.topbar-center,
+.topbar-right {
+  flex: 1;
+  text-align: center;
+}
+
+.topbar-left {
+  text-align: left;
+}
+
+.topbar-right {
+  text-align: right;
+}
+
+.topbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  margin: 0 6px;
+}
+
+/* Mobile view: one per row */
+@media (max-width: 600px) {
+  .tracking-providers {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .tracking-providers img {
+    max-width: 200px;
+  }
+  
+  .tracking-iframe {
+    height: 500px;
+  }
+  
+  .tracking-iframe-small {
+    height: 400px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+}
+
+/* ✅ Tablet/Laptop adjustments */
+@media (max-width: 1024px) {
+  .topbar {
+    font-size: 13px;        /* slightly smaller text */
+    flex-direction: column; /* stack vertically if too tight */
+    text-align: center;
+  }
+  .topbar a {
+    margin: 4px 0;
+  }
+}
+
+@media (max-width: 1068px) {
+  .topbar {
+    display: none;
+  }
+}
+
+/* Additional mobile responsive for modals */
+@media (max-width: 768px) {
+  .modal-header h3 {
+    font-size: 1.2em;
+  }
+  
+  .close {
+    font-size: 28px;
+  }
+}
+.tracking-section {
+  background-image: url("https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;  /* Or 'cover' if you prefer full fill */
+  background-attachment: fixed; /* optional */
+  background-color: #000;
+}
+.exchange-rates-section {
+  background-image: url("https://images.pexels.com/photos/6847584/pexels-photo-6847584.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;  /* Or 'cover' if you prefer full fill */
+  background-attachment: fixed; /* optional */
+  background-color: #000;
+}
+
+.services-section {
+  background-image: url("https://images.unsplash.com/photo-1751780607021-5c9c036f8ad4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;  /* Or 'cover' if you prefer full fill */
+  background-attachment: fixed; /* optional */
+  background-color: #000;
+}
+
+.colombia { color: #f0d84e; }  /* gold */
+.expreso  { color: rgb(39, 39, 228); }  /* white */
+.envios   { color: #f32c2c; }  /* orange */
+
+/* Language switcher styling */
+.language-switcher {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.lang-btn {
+  padding: 8px 15px;
+  border: 2px solid var(--secondary-color);
+  background: transparent;
+  color: var(--secondary-color);
+  font-weight: var(--font-weight-bold);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.lang-btn:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.lang-btn.active {
+  background: var(--secondary-color);
+  color: white;
+}
+
+
+
+.policy-text a {
+  margin: 0 15px;
+}
+
+/* Expanded Colombia Card */
+.exchange-card-expanded {
+  min-height: auto;
+  padding: 15px;
+}
+
+/* Main Rate Display */
+.main-rate {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.rate-label {
+  font-size: 24x;
+  font-weight: bold;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.exchange-rate-large {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 5px 0;
+  margin-bottom: -50px;
+}
+
+
+/* Fixed width container - doesn't stretch */
+.rate-sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 10px auto;  /* Center it */
+  width: 900px;       /* Fixed width */
+  max-width: 95%;     /* Responsive on mobile */
+}
+
+.rate-section {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 25px;
+  background: #fafafa;
+}
+
+/* Items fill the fixed width container */
+.rate-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rate-item {
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: transparent;  /* Remove white background */
+  border-bottom: 1px solid #999;  /* Dark gray line */
+  transition: all 0.2s ease;
+}
+
+.rate-item:hover {
+  background: rgba(255, 255, 255, 0.3);  /* Subtle hover */
+}
+
+/* Rate List */
+.rate-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  row-gap: 0;  /* No gap between rows */
+}
+
+/* Rate Items - NO individual borders */
+.rate-item {
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: transparent;
+  border-bottom: 2px solid #333;  /* Line goes full width of item */
+  transition: all 0.2s ease;
+}
+
+/* Remove border from last row */
+.rate-item:nth-last-child(1),
+.rate-item:nth-last-child(2) {
+  border-bottom: none;
+}
+
+/* ADD border back if last item is odd (different rows) */
+.rate-list:has(.rate-item:last-child:nth-child(odd)) .rate-item:nth-last-child(2) {
+  border-bottom: 2px solid #333;
+}
+
+.rate-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+
+
+
+.rate-logo {
+  width: 35px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.rate-name {
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rate-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Mobile: 1 column for exchange rates */
+@media screen and (max-width: 768px) {
+  .rate-sections-container {
+    width: 100%;
+    max-width: 95%;
+    gap: 12px;
+  }
+  
+  .rate-section {
+    width: 100%;
+  }
+  
+  /* Change from 2 columns to 1 column */
+  .rate-list {
+    grid-template-columns: 1fr;  /* Single column on mobile */
+  }
+  
+  .rate-item {
+    padding: 10px;
+  }
+  
+  .rate-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .rate-name {
+    font-size: 14px;
+  }
+  
+  .rate-value {
+    font-size: 14px;
+  }
+  
+  .rate-section-title {
+    font-size: 16px;
+  }
+  
+  /* Adjust exchange rate display */
+  .exchange-rate-large {
+    font-size: 2rem;
+  }
+  
+  .country-name {
+    font-size: 2rem;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 480px) {
+  .rate-sections-container {
+    width: 100%;
+    padding: 0 5px;
+  }
+  
+  .rate-section {
+    padding: 10px;
+  }
+  
+  .rate-list {
+    grid-template-columns: 1fr;  /* Keep single column */
+  }
+  
+  .rate-item {
+    padding: 8px;
+  }
+  
+  .exchange-rate-large {
+    font-size: 1.8rem;
+  }
+  
+  .country-name {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+
+
