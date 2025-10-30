@@ -72,7 +72,7 @@ let contentswiper = new Swiper(".slider-wrapper", {
 let heroSwiper = new Swiper(".hero-swiper", {
   loop: true,
   autoplay: {
-    delay: 6000,
+    delay: 9000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -90,7 +90,7 @@ let exchangeSwiper = new Swiper(".exchange-swiper", {
   spaceBetween: 30,
   loop: true,
   autoplay: {
-    delay: 10000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -148,4 +148,5 @@ document.addEventListener('keydown', function(event) {
   }
 
 });
+
 
