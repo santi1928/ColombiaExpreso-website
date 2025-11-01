@@ -1,3 +1,38 @@
+// External trackers we should open in a new tab
+const EXTERNAL_TRACKERS = {
+  westernunion: "https://www.westernunion.com/us/en/track-transfer.html",
+  vigo: "https://www.westernunion.com/us/en/track-transfer.html"
+};
+
+// Override/extend your existing openTracking
+function openTracking(name) {
+  // If this provider should open externally, do that and return
+  if (EXTERNAL_TRACKERS[name]) {
+    window.open(EXTERNAL_TRACKERS[name], "_blank", "noopener");
+    return;
+  }
+
+  // Otherwise use your modal (Ria, JV Cargo, etc.)
+  const modal = document.getElementById(`${name}Modal`);
+  if (modal) {
+    modal.removeAttribute("hidden");
+    modal.setAttribute("aria-hidden", "false");
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeTracking(name) {
+  const modal = document.getElementById(`${name}Modal`);
+  if (modal) {
+    modal.setAttribute("aria-hidden", "true");
+    modal.setAttribute("hidden", "");
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+}
+
+
 const navbarLinks = document.querySelectorAll(".nav-menu .nav-link");
 const menuOpenButton = document.querySelector("#menu-open-button");
 const menuCloseButton = document.querySelector("#menu-close-button");
@@ -148,5 +183,6 @@ document.addEventListener('keydown', function(event) {
   }
 
 });
+
 
 
