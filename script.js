@@ -102,7 +102,7 @@ let contentswiper = new Swiper(".slider-wrapper", {
 let heroSwiper = new Swiper(".hero-swiper", {
   loop: true,
   autoplay: {
-    delay: 20000,
+    delay: 8000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -148,3 +148,4 @@ let servicesSwiper = new Swiper(".services-swiper", {
     clickable: true,
   },
 });
+
