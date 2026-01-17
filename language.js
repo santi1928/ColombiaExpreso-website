@@ -4,7 +4,7 @@ const translations = {
     // Topbar
     'tel': 'Tel:',
     'email': 'Email:',
-    'hours': 'Hours: Mon–Fri: 8am–6:45pm | Sat: 9am–5pm',
+    'hours': 'Hours: Mon & Fri: 9am–6:30pm | Tue-Thur: 9am-6pm | Sat: 9am–5pm',
     'directions': 'Directions: 891 Main St, Paterson, NJ 07503',
     
     // Hero Section
@@ -52,9 +52,10 @@ const translations = {
     'contact-address': '891 Main St, Paterson, NJ 07503',
     'contact-phone': 'Tel: (973) 742-3021',
     'contact-fax': 'Fax: (973) 742-7933',
-    'contact-hours1': 'Monday - Friday: 8:00 AM - 6:45 PM',
-    'contact-hours2': 'Saturday: 9:00 AM - 5 PM',
-    'contact-hours3': 'Sunday: Closed',
+    'contact-hours1': 'Monday and Friday: 9:00 AM - 6:30 PM',
+    'contact-hours2': 'Tuesday - Thursday: 9:00 AM - 6:00 PM',
+    'contact-hours3': 'Saturday: 9:00 AM - 5:00 PM',
+    'contact-hours4': 'Sunday: Closed',
     'form-name': 'Your name',
     'form-email': 'Your email',
     'form-phone': 'Your phone number',
@@ -71,7 +72,7 @@ const translations = {
     // Topbar
     'tel': 'Tel:',
     'email': 'Email:',
-    'hours': 'Horario: Lun–Vie: 8am–6:45pm | Sáb: 9am–5pm',
+    'hours': 'Horario: Lun y Vie: 9am–6:30pm | Mar-Juev: 9am-6pm | Sáb: 9am–5pm',
     'directions': 'Direcciones: 891 Main St, Paterson, NJ 07503',
     
     // Hero Section
@@ -119,9 +120,10 @@ const translations = {
     'contact-address': '891 Main St, Paterson, NJ 07503',
     'contact-phone': 'Tel: (973) 742-3021',
     'contact-fax': 'Fax: (973) 742-7933',
-    'contact-hours1': 'Lunes - Viernes: 8:00 AM - 6:45 PM',
-    'contact-hours2': 'Sábado: 9:00 AM - 5 PM',
-    'contact-hours3': 'Domingo: Cerrado',
+    'contact-hours1': 'Lunes y Viernes: 9:00 AM - 6:30 PM',
+    'contact-hours2': 'Martes - Jueves: 9:00 AM - 6:00 PM',
+    'contact-hours3': 'Sábado: 9:00 AM - 5:00 PM',
+    'contact-hours4': 'Domingo: Cerrado',
     'form-name': 'Tu nombre',
     'form-email': 'Tu correo electrónico',
     'form-phone': 'Tu número de teléfono',
@@ -186,6 +188,7 @@ window.addEventListener('DOMContentLoaded', () => {
   changeLanguage(savedLang);
 
 });
+
 
 
 
