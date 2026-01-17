@@ -4,7 +4,7 @@ const translations = {
     // Topbar
     'tel': 'Tel:',
     'email': 'Email:',
-    'hours': 'Hours: Mon–Fri: 8am–6:45pm | Sat: 8am–5:45pm',
+    'hours': 'Hours: Mon–Fri: 8am–6:45pm | Sat: 9am–5pm',
     'directions': 'Directions: 891 Main St, Paterson, NJ 07503',
     
     // Hero Section
@@ -53,7 +53,7 @@ const translations = {
     'contact-phone': 'Tel: (973) 742-3021',
     'contact-fax': 'Fax: (973) 742-7933',
     'contact-hours1': 'Monday - Friday: 8:00 AM - 6:45 PM',
-    'contact-hours2': 'Saturday: 8:00 AM - 5:45 PM',
+    'contact-hours2': 'Saturday: 9:00 AM - 5 PM',
     'contact-hours3': 'Sunday: Closed',
     'form-name': 'Your name',
     'form-email': 'Your email',
@@ -71,7 +71,7 @@ const translations = {
     // Topbar
     'tel': 'Tel:',
     'email': 'Email:',
-    'hours': 'Horario: Lun–Vie: 8am–6:45pm | Sáb: 8am–5:45pm',
+    'hours': 'Horario: Lun–Vie: 8am–6:45pm | Sáb: 9am–5pm',
     'directions': 'Direcciones: 891 Main St, Paterson, NJ 07503',
     
     // Hero Section
@@ -120,7 +120,7 @@ const translations = {
     'contact-phone': 'Tel: (973) 742-3021',
     'contact-fax': 'Fax: (973) 742-7933',
     'contact-hours1': 'Lunes - Viernes: 8:00 AM - 6:45 PM',
-    'contact-hours2': 'Sábado: 8:00 AM - 5:45 PM',
+    'contact-hours2': 'Sábado: 9:00 AM - 5 PM',
     'contact-hours3': 'Domingo: Cerrado',
     'form-name': 'Tu nombre',
     'form-email': 'Tu correo electrónico',
@@ -186,5 +186,6 @@ window.addEventListener('DOMContentLoaded', () => {
   changeLanguage(savedLang);
 
 });
+
 
 
